@@ -23,10 +23,10 @@ end
 
 # remplace la lettre proposée dans le tableau si trouvé
 function replace_letter(s, a, c)
-    for i=1:length(s)
-        if c == s[i]
-            a[i] = c
-        end
+    index = search(s, c, 1)
+    while index != 0
+        a[index] = c
+        index = search(s, c, index+1)
     end
 end
 
